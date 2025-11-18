@@ -1,0 +1,94 @@
+<div class="h-full">
+    <mat-sidenav-container class="example-container" autosize>
+    <mat-sidenav class="mt-3" #sidenav mode="side">
+        <div class="flex ml-9">
+            <button mat-icon-button (click)="sidenav.toggle(); isSidenavOpen = !isSidenavOpen;">
+            <mat-icon>menu</mat-icon>
+        </button>
+        </div>
+        <div class="flex ml-10 mt-10 space-x-2 items-center hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>person</mat-icon>
+            <span class="text-2xl">Panel użytkownika</span>
+        </div>
+        <div class="flex ml-10 mt-2 space-x-2 items-center  hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>search</mat-icon>
+            <span class="text-lg">
+                Szukaj Quizów
+            </span>
+        </div>
+        <div class="flex ml-10 mt-2 space-x-2 items-center  hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>games</mat-icon>
+            <span class="text-lg">
+                Moje testy
+            </span>
+        </div>
+        <div class="flex ml-10 mt-2 space-x-2 items-center  hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>check_circle_outline</mat-icon>
+            <span class="text-lg">
+                Wyniki testów
+            </span>
+        </div>
+        <div class="flex ml-10 mt-2 space-x-2 items-center  hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>grade</mat-icon>
+            <span class="text-lg">
+                Oceny
+            </span>
+        </div>
+        <!-- Nauczyciel Sidenav -->
+        <div class="flex ml-10 mt-10 space-x-2 items-center hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>lock_open</mat-icon>
+            <span class="text-2xl">Panel Nauczyciela</span>
+        </div>
+        <div class="flex ml-10 mt-2 space-x-2 items-center  hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>folder</mat-icon>
+            <span class="text-lg">
+                Utworzone testy
+            </span>
+        </div>
+        <div class="flex ml-10 mt-2 space-x-2 items-center  hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>create</mat-icon>
+            <span class="text-lg">
+                Edytuj wyniki testów
+            </span>
+        </div>
+        <div class="flex ml-10 mt-2 space-x-2 items-center  hover:bg-gray-200 cursor-pointer p-1">
+            <mat-icon>create_new_folder</mat-icon>
+            <span class="text-lg">
+                Utwórz nowy test
+            </span>
+        </div>
+    </mat-sidenav>
+    
+
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+        @if(isSidenavOpen == false) {
+        <div>
+            <button mat-icon-button (click)="sidenav.toggle(); isSidenavOpen = !isSidenavOpen;">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <div class="flex flex-col mt-12 absolute ml-2 gap-14">
+                <div class="flex  flex-col gap-5">
+                    <mat-icon class="cursor-pointer" matTooltip="Panel użytkownika">person</mat-icon>
+                    <mat-icon class="cursor-pointer" matTooltip="Szukaj Quizów">search</mat-icon>
+                    <mat-icon class="cursor-pointer" matTooltip="Moje testy">games</mat-icon>
+                    <mat-icon class="cursor-pointer" matTooltip="Wyniki testów">check_circle_outline</mat-icon>
+                    <mat-icon class="cursor-pointer" matTooltip="Oceny">grade</mat-icon>
+                </div>
+                <!-- teacher @if -->
+                <div class="flex flex-col gap-5">
+                    <mat-icon class="cursor-pointer" matTooltip="Panel Nauczyciela">lock_open</mat-icon>
+                    <mat-icon class="cursor-pointer" matTooltip="Utworzone testy">folder</mat-icon>
+                    <mat-icon class="cursor-pointer" matTooltip="Edytuj wyniki testów">create</mat-icon>
+                    <mat-icon class="cursor-pointer" matTooltip="Utwórz nowy test">create_new_folder</mat-icon>
+                </div>
+            </div>
+        </div>
+        }
+        </mat-toolbar>
+
+        <div class="content">
+        </div>
+    </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -7,17 +7,17 @@ const routeConfig: Routes = [
   {
     path: 'login',
     component: LoginPage,
-    title: 'Login',
+    title: 'GuessIt - Logowanie',
   },
   {
     path: 'register',
     component: RegisterPage,
-    title: 'Register',
+    title: 'GuessIt - Rejestracja',
   },
   {
     path: '',
     component: HomePage,
-    title: 'Home',
+    title: 'GuessIt - Strona Główna',
   }]
 
 export default routeConfig;
