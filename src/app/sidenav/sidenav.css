@@ -1,11 +1,42 @@
 .example-container {
-    height: 93vh;
+    height: calc(100vh - 64px);
     background-color: white;
+    margin-top: 64px;
 }
-mat-sidenav, mat-sidenav-content {
+
+mat-sidenav {
+    position: fixed;
+    left: 0;
+    top: 64px;
+    height: calc(100vh - 64px);
+    background-color: white;
+    z-index: 99;
+}
+
+mat-sidenav-content {
     height: 100%;
     background-color: white;
+    margin-left: 0;
 }
+
 mat-toolbar {
-       background-color: white;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 60px;
+    height: calc(100vh - 64px);
+    background-color: white;
+    z-index: 98;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    border-right: 1px solid #e0e0e0;
+}
+
+.sidenav-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
 }

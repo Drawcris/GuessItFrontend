@@ -1,7 +1,11 @@
+@if (isLoggedIn == true) {
 <app-navbar />
+}
 <div>
-    <div class="flex space-x-">
-        <app-sidenav />
+    <div class="flex space-x-10">
+        @if(isLoggedIn == true) {
+            <app-sidenav />
+        }
         <router-outlet />
     </div>
     <app-footer />

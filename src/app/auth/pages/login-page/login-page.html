@@ -1,42 +1,44 @@
-<mat-card class="flex flex-col gap-13 w-180 mx-auto mt-50">
-  <mat-card-title class="text-center bg-white p-4 rounded-t-lg">
-    <mat-label class="text-white font-medium">
-    </mat-label>
-  </mat-card-title>
-  <mat-card-subtitle class="text-center text-lg mt-4 mb-2 flex items-center justify-center space-x-2">
-    <span class="text-2xl text-gray-400">
-          Formularz Logowania
-          <i class="bi bi-box-arrow-in-right"></i>
-    </span>
-  </mat-card-subtitle>
-  <mat-card-content>
-    <form class="flex flex-col gap-1">
-      <div class="flex items-center mx-auto w-full">
-        <i class="bi bi-inbox bg-gray-200 p-4 mb-5 rounded border "></i>
-        <mat-form-field class="flex-1">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" placeholder="Wpisz swój email" />
-        </mat-form-field>
-      </div>
-      <div class="flex items-center mx-auto w-full">
-        <i class="bi bi-lock bg-gray-200 p-4 mb-5 rounded border "></i>
-        <mat-form-field class="flex-1">
-          <mat-label>Hasło</mat-label>
-          <input matInput type="password" placeholder="Wpisz swoje hasło" />
-        </mat-form-field>
-      </div>
-      <div class="flex space-x-4 ml-3">
-      <p>Nie masz konta? </p>
-      <a class="text-blue-500" href="/register">Zarejestruj się!</a>
-      </div>
-      <div class="p-3 mt-4">
-        <button
-          class="rounded-sm w-full bg-green-400 hover:bg-green-500 text-white text-lg hover:cursor-pointer relative flex items-center justify-center px-4 pr-12 py-2"
-          type="submit">
-          <span>Zaloguj się</span>
-          <i class="bi bi-box-arrow-in-right absolute right-1 inset-y-0 flex items-center justify-center w-12 bg-green-600 hover:bg-green-700 text-white"></i>
-        </button>
-      </div>
-    </form>
-  </mat-card-content>
-</mat-card>
+<div class="justify-center">
+  <mat-card class="flex flex-col gap-13 w-180 mx-auto mt-50 center">
+    <mat-card-title class="text-center bg-white p-4 rounded-t-lg">
+      <mat-label class="text-white font-medium">
+      </mat-label>
+    </mat-card-title>
+    <mat-card-subtitle class="text-center text-lg mt-4 mb-2 flex items-center justify-center space-x-2">
+      <span class="text-2xl text-gray-400">
+            Formularz Logowania
+            <i class="bi bi-box-arrow-in-right"></i>
+      </span>
+    </mat-card-subtitle>
+    <mat-card-content>
+      <form class="flex flex-col gap-1">
+        <div class="flex items-center mx-auto w-full">
+          <i class="bi bi-inbox bg-gray-200 p-4 mb-5 rounded border "></i>
+          <mat-form-field class="flex-1">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Wpisz swój email" />
+          </mat-form-field>
+        </div>
+        <div class="flex items-center mx-auto w-full">
+          <i class="bi bi-lock bg-gray-200 p-4 mb-5 rounded border "></i>
+          <mat-form-field class="flex-1">
+            <mat-label>Hasło</mat-label>
+            <input matInput type="password" placeholder="Wpisz swoje hasło" />
+          </mat-form-field>
+        </div>
+        <div class="flex space-x-4 ml-3">
+        <p>Nie masz konta? </p>
+        <a class="text-blue-500" href="/register">Zarejestruj się!</a>
+        </div>
+        <div class="p-3 mt-4">
+          <button
+            class="rounded-sm w-full bg-green-400 hover:bg-green-500 text-white text-lg hover:cursor-pointer relative flex items-center justify-center px-4 pr-12 py-2"
+            type="submit">
+            <span>Zaloguj się</span>
+            <i class="bi bi-box-arrow-in-right absolute right-1 inset-y-0 flex items-center justify-center w-12 bg-green-600 hover:bg-green-700 text-white"></i>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
