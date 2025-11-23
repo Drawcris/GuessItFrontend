@@ -1,9 +1,9 @@
-@if (isLoggedIn == true) {
+@if (isLoggedIn()) {
 <app-navbar />
 }
 <div>
     <div class="flex space-x-10">
-        @if(isLoggedIn == true) {
+        @if(isLoggedIn()) {
             <app-sidenav />
         }
         <router-outlet />

@@ -1,8 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink ,RouterOutlet } from '@angular/router';
+import {Component, effect, signal} from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Navbar } from "./navbar/navbar";
 import { Sidenav } from './sidenav/sidenav';
 import { Footer } from './footer/footer';
+import { inject } from '@angular/core';
+import { AuthService } from './auth/services/auth-service';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +13,8 @@ import { Footer } from './footer/footer';
   styleUrl: './app.css'
 })
 export class App {
-   isLoggedIn = true;
+  authService = inject(AuthService);
+  isLoggedIn = this.authService.isLoggedIn;
+
+
 }

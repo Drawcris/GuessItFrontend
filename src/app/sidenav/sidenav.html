@@ -34,7 +34,9 @@
                 Oceny
             </span>
         </div>
-        <!-- Nauczyciel Sidenav -->
+
+      @if (userProfile?.RoleType == 'Teacher') {
+
         <div class="flex ml-10 mt-10 space-x-2 items-center hover:bg-gray-200 cursor-pointer p-1">
             <mat-icon>lock_open</mat-icon>
             <span class="text-2xl">Panel Nauczyciela</span>
@@ -57,8 +59,9 @@
                 Utwórz nowy test
             </span>
         </div>
+      }
     </mat-sidenav>
-    
+
 
     <mat-sidenav-content>
         <mat-toolbar color="primary">
@@ -75,13 +78,14 @@
                     <mat-icon class="cursor-pointer" matTooltip="Wyniki testów">check_circle_outline</mat-icon>
                     <mat-icon class="cursor-pointer" matTooltip="Oceny">grade</mat-icon>
                 </div>
-                <!-- teacher @if -->
+                @if (userProfile?.RoleType == 'Teacher') {
                 <div class="flex flex-col gap-5">
                     <mat-icon class="cursor-pointer" matTooltip="Panel Nauczyciela">lock_open</mat-icon>
                     <mat-icon class="cursor-pointer" matTooltip="Utworzone testy">folder</mat-icon>
                     <mat-icon class="cursor-pointer" matTooltip="Edytuj wyniki testów">create</mat-icon>
                     <mat-icon class="cursor-pointer" matTooltip="Utwórz nowy test">create_new_folder</mat-icon>
                 </div>
+                }
             </div>
         </div>
         }

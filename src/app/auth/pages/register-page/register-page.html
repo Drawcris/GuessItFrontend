@@ -11,48 +11,72 @@
       </span>
     </mat-card-subtitle>
     <mat-card-content>
-      <form class="flex flex-col gap-1">
+      <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-1">
         <div class="flex items-center mx-auto w-full">
           <i class="bi bi-person bg-gray-200 p-4 mb-5 rounded border "></i>
           <mat-form-field class="flex-1">
             <mat-label>Imię</mat-label>
-            <input matInput type="text" placeholder="Wpisz swoje imię" />
+            <input formControlName="firstName" matInput type="text" placeholder="Wpisz swoje imię" />
+            <mat-error *ngIf="createUserForm.get('firstName')?.hasError('required')">
+              Imię jest wymagane
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="flex items-center mx-auto w-full">
           <i class="bi bi-person bg-gray-200 p-4 mb-5 rounded border "></i>
           <mat-form-field class="flex-1">
             <mat-label>Nazwisko</mat-label>
-            <input matInput placeholder="Wpisz swoje nazwisko" />
+            <input formControlName="lastName" matInput placeholder="Wpisz swoje nazwisko" />
+            <mat-error *ngIf="createUserForm.get('lastName')?.hasError('required')">
+              Nazwisko jest wymagane
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="flex items-center mx-auto w-full">
           <i class="bi bi-inbox bg-gray-200 p-4 mb-5 rounded border "></i>
           <mat-form-field class="flex-1">
             <mat-label>Email</mat-label>
-            <input matInput type="email" placeholder="Wpisz swój email" />
+            <input formControlName="email" matInput type="email" placeholder="Wpisz swój email" />
+            <mat-error *ngIf="createUserForm.get('email')?.hasError('required')">
+              Email jest wymagany
+            </mat-error>
+            <mat-error *ngIf="createUserForm.get('email')?.hasError('email')">
+              Podaj prawidłowy adres email
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="flex items-center mx-auto w-full">
           <i class="bi bi-lock bg-gray-200 p-4 mb-5 rounded border "></i>
           <mat-form-field class="flex-1">
             <mat-label>Hasło</mat-label>
-            <input matInput type="password" placeholder="Wpisz swoje hasło" />
+            <input formControlName="password" matInput type="password" placeholder="Wpisz swoje hasło" />
+            <mat-error *ngIf="createUserForm.get('password')?.hasError('required')">
+              Hasło jest wymagane
+            </mat-error>
+            <mat-error *ngIf="createUserForm.get('password')?.hasError('minlength')">
+              Hasło musi mieć co najmniej 8 znaków
+            </mat-error>
+            <mat-error *ngIf="createUserForm.get('password')?.hasError('passwordStrength')">
+              Hasło musi zawierać wielką literę i znak specjalny
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="flex items-center mx-auto w-full">
           <i class="bi bi-person-badge bg-gray-200 p-4 mb-5 rounded border "></i>
           <mat-form-field class="flex-1">
             <mat-label>Rodzaj Konta</mat-label>
-            <mat-select>
-              <mat-option value="one">Nauczyciel</mat-option>
-              <mat-option value="two">Uczeń</mat-option>
+            <mat-select formControlName="roleType">
+              <mat-option [value]="0">Nauczyciel</mat-option>
+              <mat-option [value]="1">Uczeń</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div class="flex space-x-4">
         <p>Masz już konto? </p>
         <a class="text-blue-500" href="/login">Zaloguj się!</a>
+        </div>
+        <div *ngIf="registerError" class="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+          {{ registerError }}
         </div>
         <div class="p-3 mt-4">
           <button

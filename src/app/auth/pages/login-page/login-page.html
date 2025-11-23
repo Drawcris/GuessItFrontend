@@ -11,20 +11,35 @@
       </span>
     </mat-card-subtitle>
     <mat-card-content>
-      <form class="flex flex-col gap-1">
+      <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-1">
         <div class="flex items-center mx-auto w-full">
           <i class="bi bi-inbox bg-gray-200 p-4 mb-5 rounded border "></i>
           <mat-form-field class="flex-1">
             <mat-label>Email</mat-label>
-            <input matInput type="email" placeholder="Wpisz swój email" />
+            <input formControlName="email" matInput type="email" placeholder="Wpisz swój email" />
+            <mat-error *ngIf="createUserForm.get('email')?.hasError('required')">
+              Email jest wymagany
+            </mat-error>
+            <mat-error *ngIf="createUserForm.get('email')?.hasError('email')">
+              Podaj prawidłowy adres email
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="flex items-center mx-auto w-full">
           <i class="bi bi-lock bg-gray-200 p-4 mb-5 rounded border "></i>
           <mat-form-field class="flex-1">
             <mat-label>Hasło</mat-label>
-            <input matInput type="password" placeholder="Wpisz swoje hasło" />
+            <input formControlName="password" matInput type="password" placeholder="Wpisz swoje hasło" />
+            <mat-error *ngIf="createUserForm.get('password')?.hasError('required')">
+              Hasło jest wymagane
+            </mat-error>
+            <mat-error *ngIf="createUserForm.get('password')?.hasError('minlength')">
+              Hasło musi mieć co najmniej 8 znaków
+            </mat-error>
           </mat-form-field>
+        </div>
+        <div *ngIf="loginError" class="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+          {{ loginError }}
         </div>
         <div class="flex space-x-4 ml-3">
         <p>Nie masz konta? </p>
