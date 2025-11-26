@@ -10,8 +10,8 @@ import {UserProfile} from '../auth/interfaces/my-profile-info';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  authService: AuthService = inject(AuthService);
-  router: Router = inject(Router);
+  private authService: AuthService = inject(AuthService);
+  private router: Router = inject(Router);
 
   userProfile: UserProfile | null = null;
 

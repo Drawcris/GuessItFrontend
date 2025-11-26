@@ -26,8 +26,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login-page.css',
 })
 export class LoginPage {
-    authService: AuthService = inject(AuthService);
-    router: Router = inject(Router);
+    private authService: AuthService = inject(AuthService);
+    private router: Router = inject(Router);
     loginError: string = '';
 
     createUserForm = new FormGroup({

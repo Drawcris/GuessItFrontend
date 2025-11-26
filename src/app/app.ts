@@ -13,7 +13,8 @@ import { AuthService } from './auth/services/auth-service';
   styleUrl: './app.css'
 })
 export class App {
-  authService = inject(AuthService);
+  private authService = inject(AuthService);
+  
   isLoggedIn = this.authService.isLoggedIn;
 
 

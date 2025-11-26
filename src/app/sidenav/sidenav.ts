@@ -15,9 +15,9 @@ import {UserProfile} from '../auth/interfaces/my-profile-info';
   styleUrl: './sidenav.css',
 })
 export class Sidenav {
-  isSidenavOpen = false;
-  authService = inject(AuthService);
+  private authService = inject(AuthService);
 
+  isSidenavOpen = false;
   userProfile: UserProfile | null = null;
 
   ngOnInit() {

@@ -16,7 +16,7 @@ import {UserProfile} from '../../../auth/interfaces/my-profile-info';
   styleUrl: './home-page.css',
 })
 export class HomePage {
-  authService: AuthService = inject(AuthService);
+  private authService: AuthService = inject(AuthService);
 
   userProfile: UserProfile | null = null;
 

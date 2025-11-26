@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 import { RegisterDto } from '../../interfaces/register-dto';
 import { CommonModule } from '@angular/common';
 
-// Custom validator dla hasła
 function passwordValidator(control: AbstractControl): ValidationErrors | null {
   const value = control.value;
   if (!value) {
@@ -40,8 +39,9 @@ function passwordValidator(control: AbstractControl): ValidationErrors | null {
   styleUrl: './register-page.css',
 })
 export class RegisterPage {
-  authService: AuthService = inject(AuthService);
-  router: Router = inject(Router);
+  private authService: AuthService = inject(AuthService);
+  private router: Router = inject(Router);
+
   registerError: string = '';
 
   createUserForm = new FormGroup({
