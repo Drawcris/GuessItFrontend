@@ -7,10 +7,11 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { inject } from '@angular/core';
 import { AuthService } from '../auth/services/auth-service';
 import {UserProfile} from '../auth/interfaces/my-profile-info';
+import { RouterLink, RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-sidenav',
-  imports: [MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatTooltipModule],
+  imports: [MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatTooltipModule, RouterLink],
   templateUrl: './sidenav.html',
   styleUrl: './sidenav.css',
 })

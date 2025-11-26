@@ -87,7 +87,10 @@ export class AuthService {
   }
 
   isTeacher(): boolean {
-    const user = this.getCurrentUser();
-    return user && user.role === 'Teacher';
+    const user = this.currentUserSubject.value;
+    if (user && user.RoleType === 'Teacher') {
+      return true;
+    }
+    return false;
   }
 }
