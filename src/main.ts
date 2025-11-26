@@ -4,7 +4,8 @@ import routeConfig from "./app/routes"
 import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import { App } from './app/app';
 import { authInterceptor } from './app/Interceptors/auth-interceptor';
+import { routes } from './app/app.routes';
 
 bootstrapApplication(App, {
-  providers: [provideRouter(routeConfig), provideHttpClient(withInterceptors([authInterceptor]))]
+  providers: [provideRouter(routes), provideHttpClient(withInterceptors([authInterceptor]))]
 }).catch((err) => console.error(err));
